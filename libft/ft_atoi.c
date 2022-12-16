@@ -29,17 +29,10 @@ int	ft_atoi(char *str)
 			sign = sign * -1;
 		i++;
 	}
-	while ((str[i] > 48 && str[i] < 57))
+	while ((str[i] >= 48 && str[i] <= 57))
 	{
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
 	return (res * sign);
-}
-
-int main(void)
-{
-	printf("my Atoi %d\n", ft_atoi("   \t\n     2147483655"));
-	printf("Og Atoi %d\n", atoi("     \t \n       2147483655"));
-	return (0);
 }
