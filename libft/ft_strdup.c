@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 19:20:17 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/14 19:20:17 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/17 15:13:30 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ char	*ft_strdup(const char *s)
 	char	*ptr;
 
 	i = 0;
-	len = ft_strlen((char *)s);
-	ptr = malloc(sizeof(char) * len);
+	len = ft_strlen((char *)s) + 1;
+	ptr = (char *)malloc(sizeof(char) * len);
 	if (ptr == NULL)
 		return (NULL);
-	while (i <= len)
-	{
-		ptr[i] = s[i];
-		i++;
-	}
+	while (*s != '\0')
+		ptr[i++] = *s++;
+	ptr[i] = '\0';
 	return (ptr);
 }

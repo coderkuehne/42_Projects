@@ -6,13 +6,13 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:19:57 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/13 15:19:57 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/17 15:50:00 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
 	unsigned char	*ptr;

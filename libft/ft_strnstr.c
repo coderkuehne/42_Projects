@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:04:42 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/14 14:04:42 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/17 13:35:40 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
-		while (little[j] != '\0')
+		while (little[j] != '\0' && (i + j) < len)
 		{
 			if (big[i + j] != little[j])
 				break ;
@@ -34,20 +34,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-
-void	ft_print_result(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-int		main(void)
-{
-	printf("%s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	return(0);
 }

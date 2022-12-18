@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:33:44 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/14 11:33:44 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:47:38 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_strlen(char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strcat(char *dest, char *src);
+char	*ft_strdup(const char *s);
 int		ft_strlcat(char *dest, char *src, unsigned int size);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_strlcat(char *dest, char *src, unsigned int size);
