@@ -6,17 +6,17 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:33:44 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/17 14:47:38 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/18 16:59:14 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define  LIBFT_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

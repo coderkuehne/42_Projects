@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 18:20:49 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/14 18:20:49 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/18 16:59:17 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	ptr = NULL;
 	i = nmemb * size;
-	if (i != 0)
+	if (i >= 0)
 	{
 		ptr = malloc(i);
 		if (ptr != NULL)

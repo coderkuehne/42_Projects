@@ -6,7 +6,7 @@
 #    By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 19:36:14 by kekuhne           #+#    #+#              #
-#    Updated: 2022/12/16 20:00:45 by kekuhne          ###   ########.fr        #
+#    Updated: 2022/12/18 13:12:44 by kekuhne          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,12 @@ SRCS		=		ft_atoi.c 		\
 					ft_isprint.c	\
 					ft_memchr.c		\
 					ft_memcmp.c		\
+					ft_memcpy.c		\
 					ft_memmove.c	\
 					ft_memset.c		\
 					ft_strcat.c		\
 					ft_strchr.c		\
+					ft_strrchr.c	\
 					ft_strlcat.c	\
 					ft_strlcpy.c	\
 					ft_strlen.c		\
@@ -37,6 +39,7 @@ SRCS		=		ft_atoi.c 		\
 					ft_strnstr.c	\
 					ft_tolower.c	\
 					ft_toupper.c	\
+					ft_strdup.c		\
 
 OBJECTS = $(SRCS:.c=.o)
 

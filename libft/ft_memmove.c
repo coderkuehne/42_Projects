@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 16:53:30 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/17 16:01:13 by kekuhne          ###   ########.fr       */
+/*   Created: 2022/12/18 15:32:47 by kekuhne           #+#    #+#             */
+/*   Updated: 2022/12/18 16:59:20 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,27 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*ptr_dest;
-	unsigned char	*ptr_src;
+	int	i;
 
-	i = 0;
-	ptr_dest = (unsigned char *)dest;
-	ptr_src = (unsigned char *)src;
-	while (i < n)
-		ptr_dest[i++] = *ptr_src++;
+	if (dest == src)
+		return (NULL);
+	if (dest < src)
+	{
+		i = 0;
+		while (i < (int)n)
+		{
+			*(char *)(dest + i) = *(char *)(src + i);
+			i++;
+		}
+	}
+	else
+	{
+		i = (int)n - 1;
+		while (i >= 0)
+		{
+			*(char *)(dest + i) = *(char *)(src + i);
+			i--;
+		}
+	}
 	return (dest);
-}
+}	
