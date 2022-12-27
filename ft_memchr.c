@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 13:41:01 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/17 15:26:11 by kekuhne          ###   ########.fr       */
+/*   Updated: 2022/12/27 13:50:58 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	ptr = (char *)s;
 	while (i < n)
 	{
-		if (ptr[i] == c)
+		if (ptr[i] == (char)c)
 			return ((void *)ptr + i);
 		i++;
 	}

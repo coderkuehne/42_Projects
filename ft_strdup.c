@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 13:44:14 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/13 13:44:14 by kekuhne          ###   ########.fr       */
+/*   Created: 2022/12/14 19:20:17 by kekuhne           #+#    #+#             */
+/*   Updated: 2022/12/27 13:48:43 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	dest_len;
+	size_t	i;
+	size_t	len;
+	char	*ptr;
 
 	i = 0;
-	dest_len = ft_strlen(dest);
-	while (src[i] != '\0')
-	{
-		dest[dest_len + i] = src[i];
-		i++;
-	}
-	dest[dest_len + i] = '\0';
-	return (dest);
+	len = ft_strlen(s) + 1;
+	ptr = (char *)malloc(sizeof(char) * len);
+	if (ptr == NULL)
+		return (NULL);
+	while (*s != '\0')
+		ptr[i++] = *s++;
+	ptr[i] = '\0';
+	return (ptr);
 }

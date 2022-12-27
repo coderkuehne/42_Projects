@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 19:20:17 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/17 15:13:30 by kekuhne          ###   ########.fr       */
+/*   Created: 2022/12/13 15:26:44 by kekuhne           #+#    #+#             */
+/*   Updated: 2022/12/27 13:52:00 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	size_t	len;
-	char	*ptr;
+	size_t			i;
+	unsigned char	*ptr_dest;
+	unsigned char	*ptr_src;
 
 	i = 0;
-	len = ft_strlen((char *)s) + 1;
-	ptr = (char *)malloc(sizeof(char) * len);
-	if (ptr == NULL)
-		return (NULL);
-	while (*s != '\0')
-		ptr[i++] = *s++;
-	ptr[i] = '\0';
-	return (ptr);
+	if ((dest != src) && (n != 0))
+	{
+		ptr_dest = (unsigned char *)dest;
+		ptr_src = (unsigned char *)src;
+		while (i < n)
+			ptr_dest[i++] = *ptr_src++;
+	}
+	return (dest);
 }

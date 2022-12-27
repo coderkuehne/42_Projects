@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 15:04:16 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/14 15:04:16 by kekuhne          ###   ########.fr       */
+/*   Created: 2022/12/13 13:57:45 by kekuhne           #+#    #+#             */
+/*   Updated: 2022/12/27 13:53:05 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned int	i;
-	int				sign;
-	int				res;
+	size_t	i;
+	char	*ptr;
 
+	ptr = (char *)s;
 	i = 0;
-	sign = 1;
-	res = 0;
-	while ((str[i] == 32) || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = sign * -1;
+	while (i < n)
+	{	
+		ptr[i] = (char)c;
 		i++;
 	}
-	while ((str[i] >= 48 && str[i] <= 57))
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
-	return (res * sign);
+	return (s);
 }
