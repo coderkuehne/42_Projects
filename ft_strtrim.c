@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 23:20:18 by kekuhne           #+#    #+#             */
-/*   Updated: 2022/12/27 13:48:44 by kekuhne          ###   ########.fr       */
+/*   Updated: 2023/01/03 15:57:27 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	size_t	trim_pony;
 	size_t	trim_mullet;
-	size_t	i;
-	char	*ptr;
 
 	trim_pony = 0;
 	len = 0;
-	while ((s1[trim_pony] != '\0') && (check_set(set, s1[trim_pony]) == 1))
+	if (s1 == NULL)
+		return (ft_strdup(""));
+	if (set == NULL)
+		return (ft_strdup(s1));
+	trim_mullet = ft_strlen(s1);
+	while (check_set(set, s1[trim_pony]) == 1)
 		trim_pony++;
-	trim_mullet = ft_strlen(s1) - 1;
-	while ((trim_mullet > trim_pony) && (check_set(set, s1[trim_mullet]) == 1))
+	if (trim_mullet == trim_pony)
+		return (ft_strdup(""));
+	while (check_set(set, s1[trim_mullet - 1]) == 1)
 		trim_mullet--;
-	len = trim_mullet - trim_pony + 1;
-	ptr = (char *)malloc(sizeof(*ptr) * (len + 1));
-	if (ptr != NULL)
-	{
-		i = -1;
-		while (++i < len)
-			ptr[i] = s1[trim_pony + i];
-		ptr[i] = '\0';
-	}
-	return (ptr);
+	len = trim_mullet - trim_pony;
+	return (ft_substr(s1, trim_pony, len));
 }
