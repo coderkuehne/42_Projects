@@ -13,12 +13,43 @@
     <li><strong>Understanding Standard Library Functions:</strong> This project allowed me to peek behind the scenes of standard library functions and comprehend how they are implemented.</li>
 </ol>
 
-<h2>Structure</h2>
-<p>The Libft project is organized into three main parts:</p>
+<h2>Functions</h2>
+<p>Functions present ind The Libft project</p>
 <ol>
-    <li><strong>Libc Functions:</strong> This section involves re-implementing some standard library functions from <code>libc</code>, such as string manipulation, memory functions, and basic I/O functions.</li>
-    <li><strong>Additional Functions:</strong> Here, I implemented extra functions that are not part of the standard C library but can be incredibly useful in various projects.</li>
-    <li><strong>Bonus Part:</strong> The bonus section provided an opportunity to implement additional functions, which were evaluated only if the mandatory part was correct. These bonus functions could earn me extra points.</li>
+  <li><code>memset</code>: Sets a block of memory with a specified value.</li>
+  <li><code>bzero</code>: Clears a block of memory.</li>
+  <li><code>memcpy</code>: Copies a block of memory from the source to the destination.</li>
+  <li><code>memccpy</code>: Copies a block of memory up to a specified character.</li>
+  <li><code>memmove</code>: Safely copies a block of memory, even if the source and destination overlap.</li>
+  <li><code>memchr</code>: Searches for a character in a block of memory.</li>
+  <li><code>memcmp</code>: Compares two blocks of memory.</li>
+  <li><code>strlen</code>: Calculates the length of a string.</li>
+  <li><code>strlcpy</code>: Copies a string up to a specified size.</li>
+  <li><code>strlcat</code>: Concatenates two strings up to a specified size.</li>
+  <li><code>strchr</code>: Locates the first occurrence of a character in a string.</li>
+  <li><code>strrchr</code>: Locates the last occurrence of a character in a string.</li>
+  <li><code>strnstr</code>: Locates a substring in a string up to a specified size.</li>
+  <li><code>strncmp</code>: Compares two strings up to a specified length.</li>
+  <li><code>atoi</code>: Converts a string to an integer.</li>
+  <li><code>isalpha</code>: Checks if a character is an alphabetic character.</li>
+  <li><code>isdigit</code>: Checks if a character is a digit.</li>
+  <li><code>isalnum</code>: Checks if a character is alphanumeric.</li>
+  <li><code>isascii</code>: Checks if a character is an ASCII character.</li>
+  <li><code>isprint</code>: Checks if a character is printable.</li>
+  <li><code>toupper</code>: Converts a character to uppercase.</li>
+  <li><code>tolower</code>: Converts a character to lowercase.</li>
+  <li><code>calloc</code>: Allocates memory and initializes it to zero.</li>
+  <li><code>strdup</code>: Duplicates a string.</li>
+  <li><code>substr</code>: Extracts a substring from a string.</li>
+  <li><code>strjoin</code>: Concatenates two strings.</li>
+  <li><code>strtrim</code>: Removes specified characters from the beginning and end of a string.</li>
+  <li><code>split</code>: Splits a string into an array of substrings based on a delimiter.</li>
+  <li><code>itoa</code>: Converts an integer to a string.</li>
+  <li><code>strmapi</code>: Applies a function to each character of a string.</li>
+  <li><code>putchar_fd</code>: Writes a character to a file descriptor.</li>
+  <li><code>putstr_fd</code>: Writes a string to a file descriptor.</li>
+  <li><code>putendl_fd</code>: Writes a string followed by a newline to a file descriptor.</li>
+  <li><code>putnbr_fd</code>: Writes an integer to a file descriptor.</li>
 </ol>
 
 <h2>How to Use</h2>
