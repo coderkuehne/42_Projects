@@ -1,7 +1,4 @@
 
-<head>
-    <title>Libft Documentation</title>
-</head>
 <body>
     <h1>Libft Documentation</h1>
 
