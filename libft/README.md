@@ -52,20 +52,9 @@
   <li><code>putnbr_fd</code>: Writes an integer to a file descriptor.</li>
 </ol>
 
-<h2>How to Use</h2>
-<p>To use the Libft library in my C projects, I can follow these steps:</p>
-<ol>
-    <li>I'll clone the Libft repository to my local machine using the <code>git clone</code> command.</li>
-    <li>Navigating to the "libft" folder, I can compile the library by running the <code>make</code> command, which creates a <code>libft.a</code> archive file.</li>
-    <li>In my other 42 projects, I'll include the header file <code>libft.h</code> and link the <code>libft.a</code> archive during compilation to utilize the library functions.</li>
-</ol>
-
 <h2>Contributing</h2>
-<p>Contributions to the Libft project are welcome! If I come across any bugs or have suggestions for improvements, I can create an issue or submit a pull request on the GitHub repository.</p>
+<p>Contributions to the Libft project are welcome! If you come across any bugs or have suggestions for improvements, please reach out to me!</p>
 
 <h2>Credits</h2>
 <p>I would like to acknowledge the creators of 42 for designing the Libft project and providing me with the opportunity to enhance my C programming skills.</p>
 
-<h2>License</h2>
-<p>The Libft project is open-source and available under the <a href="LICENSE">MIT License</a>. I am free to use, modify, and distribute the code as per the terms of the license.</p>
-</body>
