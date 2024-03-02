@@ -36,3 +36,4 @@ void	AMateria::setType(const std::string &type)
 {
 	_type = type;
 }
+

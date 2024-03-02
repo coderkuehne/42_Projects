@@ -12,13 +12,15 @@
 
 #include "Character.hpp"
 #include "AMateria.hpp"
+#include "cstdlib"
 
 Character::Character() : _name("Default")
 {
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
+	for (int i = 0; i < MAX_FLOOR_SIZE; ++i)
+		floor[i] = NULL;
 	_onfloor = 0;
-	*floor = NULL;
 	std::cout << "Default Character constructed : " << std::endl; 
 }
 
@@ -26,16 +28,17 @@ Character::Character(std::string const &name) : _name(name)
 {
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
+	for (int i = 0; i < MAX_FLOOR_SIZE; ++i)
+		floor[i] = NULL;
 	_onfloor = 0;
-	*floor = NULL;
 	std::cout << "Character constructed : " << _name << std::endl; 
-}
 
+}
 Character::~Character()
 {
 	for (int i = 0; i < 4; ++i)
 		delete _inventory[i];
-	for (int i= 0; i < _onfloor;++i)
+	for (int i = 0; i < _onfloor; ++i)
 		delete floor[i];
 }
 
@@ -79,8 +82,8 @@ void	Character::equip(AMateria *m)
 			return ;
 		}
 	}
+	std::cout << "Slots Full putting on Floor" << std::endl;
 	floor[_onfloor++] = m;
-	std::cout <<  "4/4 Materia Slots in use: cant equip" << std::endl;
 }
 
 void	Character::unequip(int idx) 

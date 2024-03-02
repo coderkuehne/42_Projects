@@ -12,6 +12,7 @@
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
+#  define MAX_FLOOR_SIZE 10
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
 
@@ -21,7 +22,7 @@
 			std::string	_name;
 			AMateria 	*_inventory[4];
 			int			_onfloor;
-			AMateria	*floor[];
+			AMateria	*floor[MAX_FLOOR_SIZE];
 		
 		public:
 						Character();
