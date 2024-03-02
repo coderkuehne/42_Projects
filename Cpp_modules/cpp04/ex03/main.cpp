@@ -24,9 +24,7 @@ int main()
 
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
+
 
 	ICharacter *me = new Character("me");
 	AMateria *tmp;
@@ -43,9 +41,9 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	std::cout<< "\n";
-	std::cout << "\033[1;31mShould`nt equip cause slots are full\033[0m\n";
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	// std::cout << "\033[1;31mShould`nt equip cause slots are full\033[0m\n";
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
 	std::cout<< "\n\n";
 
 	std::cout << "\033[1;31mUnequiping non existent Slot should fail \033[0m\n";

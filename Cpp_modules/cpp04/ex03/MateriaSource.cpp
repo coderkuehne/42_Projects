@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource() : _numMaterias(0)
 {
 	for (int i = 0; i < 4; i++)
-		_knownMaterias[i] = nullptr;
+		_knownMaterias[i] = NULL;
 }
 
 MateriaSource::~MateriaSource()
@@ -32,7 +32,10 @@ void	MateriaSource::learnMateria(AMateria *m)
 		std::cout << _numMaterias <<"/4 slots in use: Materia learned!" << std::endl;
 	}
 	else
+	{
 		std::cout << "4/4 slots in use: Cant learn Materia" << std::endl;
+		delete m;
+	}
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)
@@ -42,5 +45,5 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 		if (_knownMaterias[i]->getType() == type)
 			return (_knownMaterias[i]->clone());
 	}
-	return (nullptr);
+	return (NULL);
 }

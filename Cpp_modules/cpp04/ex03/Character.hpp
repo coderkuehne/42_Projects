@@ -20,6 +20,8 @@
 		private:
 			std::string	_name;
 			AMateria 	*_inventory[4];
+			int			_onfloor;
+			AMateria	*floor[];
 		
 		public:
 						Character();
