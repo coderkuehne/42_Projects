@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:24:44 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/26 15:46:01 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/03 16:09:19 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	animals[0] = new Dog();
 	animals[1] = new Cat();
 	animals[2] = new Dog();
-	animals[3] = new Cat();
+	animals[3] = animals[1]->clone();
 
 	for (int i = 0; i < num_animals; ++i)
 	{

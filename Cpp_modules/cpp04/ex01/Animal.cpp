@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:42:14 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/26 15:45:10 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/03 15:36:31 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ Animal &Animal::operator=(const Animal &other)
 {
 	if (this != &other)
 	{
-		this->_type = other._type;
-		_brain = other._brain;
+		_type = other._type;
+		delete _brain;
+		_brain = NULL;
+		if (other._brain)
+			_brain = new Brain(*other._brain);
 	}
 	return (*this);
 }

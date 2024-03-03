@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:50:44 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/27 17:04:27 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/02 14:03:47 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Character::Character() : _name("Default")
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
 	for (int i = 0; i < MAX_FLOOR_SIZE; ++i)
-		floor[i] = NULL;
+		_floor[i] = NULL;
 	_onfloor = 0;
-	std::cout << "Default Character constructed : " << std::endl; 
+	std::cout << "Default Character constructed : " << std::endl;
 }
 
 Character::Character(std::string const &name) : _name(name)
@@ -29,9 +29,9 @@ Character::Character(std::string const &name) : _name(name)
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
 	for (int i = 0; i < MAX_FLOOR_SIZE; ++i)
-		floor[i] = NULL;
+		_floor[i] = NULL;
 	_onfloor = 0;
-	std::cout << "Character constructed : " << _name << std::endl; 
+	std::cout << "Character constructed : " << _name << std::endl;
 
 }
 Character::~Character()
@@ -39,7 +39,7 @@ Character::~Character()
 	for (int i = 0; i < 4; ++i)
 		delete _inventory[i];
 	for (int i = 0; i < _onfloor; ++i)
-		delete floor[i];
+		delete _floor[i];
 }
 
 Character	&Character::operator=(const Character &other)
@@ -69,7 +69,7 @@ void	Character::setName(const std::string &name)
 	_name = name;
 }
 
-void	Character::equip(AMateria *m) 
+void	Character::equip(AMateria *m)
 {
 	if (!m)
 		return ;
@@ -83,14 +83,14 @@ void	Character::equip(AMateria *m)
 		}
 	}
 	std::cout << "Slots Full putting on Floor" << std::endl;
-	floor[_onfloor++] = m;
+	_floor[_onfloor++] = m;
 }
 
-void	Character::unequip(int idx) 
+void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
 	{
-		floor[_onfloor++] = _inventory[idx];
+		_floor[_onfloor++] = _inventory[idx];
 		_inventory[idx] = NULL;
 		std::cout << idx << " is now an empty slot" << std::endl;
 	}

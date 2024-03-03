@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:03:07 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/27 17:05:13 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/02 14:06:29 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice Materia constructed" << std::endl; 
+	std::cout << "Ice Materia constructed" << std::endl;
 }
 
 Ice::~Ice()

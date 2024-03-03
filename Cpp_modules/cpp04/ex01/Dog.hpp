@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 15:56:11 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/25 19:40:28 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/03 16:18:30 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 		public:
 					Dog();
 			void	makeSound() const;
+			Dog 	*clone() const;
 	};
 
 #endif 

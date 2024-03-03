@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 15:47:49 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/26 15:38:31 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/03 16:17:31 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 		public:
 					Cat();
 			void	makeSound() const;
+			Cat 	*clone() const;
 		};
 
 #endif 

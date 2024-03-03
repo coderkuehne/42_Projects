@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 15:56:47 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/25 15:57:11 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/03 16:18:47 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@ Dog::Dog() : Animal()
 void Dog::makeSound() const
 {
 	std::cout << "Woof" << std::endl;
+}
+
+Dog *Dog::clone() const
+{
+	return (new Dog());
 }

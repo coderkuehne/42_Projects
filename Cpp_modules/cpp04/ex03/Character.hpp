@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:50:40 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/27 17:06:34 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/02 14:00:02 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 			std::string	_name;
 			AMateria 	*_inventory[4];
 			int			_onfloor;
-			AMateria	*floor[MAX_FLOOR_SIZE];
-		
+			AMateria	*_floor[MAX_FLOOR_SIZE];
+
 		public:
 						Character();
 						Character(std::string const &name);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 15:49:36 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/25 15:53:44 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/03 16:02:25 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@ Cat::Cat() : Animal()
 void Cat::makeSound() const
 {
 	std::cout << "meow" << std::endl;
+}
+
+Cat *Cat::clone() const
+{
+	return (new Cat());
 }
