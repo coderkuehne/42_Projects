@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:24:44 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/25 19:58:59 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/06 12:26:39 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ int main() {
     Animal *meta = new Animal();
     Animal *j = new Dog();
     Animal *i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-
-    // Testing WrongCat
+    std::cout << j->getType() << ": ";
+	j->makeSound();
+    std::cout << i->getType() << ": ";
+	i->makeSound();
+	std::cout << "Animal : ";
+	meta->makeSound();
+    std::cout << "\nWrong Animal" << std::endl;
     WrongAnimal *wrongCat = new WrongCat();
+    std::cout << wrongCat->getType() << ": ";
     wrongCat->makeSound();
 	delete meta;
 	delete i;

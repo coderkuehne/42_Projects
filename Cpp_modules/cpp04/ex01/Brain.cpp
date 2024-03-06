@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:16:07 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/25 20:49:37 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/06 12:39:46 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Brain::Brain()
 {
 	for(int i = 0; i < 100; i++)
-		_ideas[i] = "idea " + std::to_string(i);
+		_ideas[i] = "idea ";
 	std::cout << "Brian construceted" << std::endl;
 }
 
