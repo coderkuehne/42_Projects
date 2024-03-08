@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:14:39 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/25 20:38:05 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 13:52:07 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 			std::string _ideas[100];
 		public:
 				Brain();
+				Brain(const Brain &other);
 				~Brain();
 		Brain	&operator=(const Brain &other);
 	};

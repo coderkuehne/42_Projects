@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:35:52 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/06 12:49:57 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 13:50:45 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Animal
 	public:
 						Animal();
 						Animal(const std::string &type);
+						Animal(const Animal &other);
 		virtual			~Animal();
 		virtual Animal	&operator=(const Animal &other) = 0;
 		virtual void	makeSound() const;

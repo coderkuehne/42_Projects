@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:50:44 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/02 14:03:47 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/06 13:58:07 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Character::Character(std::string const &name) : _name(name)
 		_floor[i] = NULL;
 	_onfloor = 0;
 	std::cout << "Character constructed : " << _name << std::endl;
-
 }
+
 Character::~Character()
 {
 	for (int i = 0; i < 4; ++i)

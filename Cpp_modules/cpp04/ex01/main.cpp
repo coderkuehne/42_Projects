@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:24:44 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/06 13:10:06 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 14:05:57 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int main()
 	animals[2] = new Dog();
 	animals[3] = new Cat();
 
+	Animal* a = new Cat(*dynamic_cast<Cat*>(animals[3]));
+
 	std::cout << std::endl;
 	for (int i = 0; i < num_animals; ++i)
 	{
@@ -31,9 +33,15 @@ int main()
 		animals[i]->makeSound();
 		std::cout << "Adress of Brain: ";
 		animals[i]->printBrainAddress();
-		std::cout << std::endl;
+		std::cout << "Animal Adress : " << &animals[i] << std::endl;
 	}
+	std::cout << a->getType() << " cpy says ";
+	a->makeSound();
+	std::cout << "Adress of cpy Brain: ";
+	a->printBrainAddress();
+	std::cout << "cpy Animal Adress : " << &a << std::endl;
 	std::cout << std::endl;
+	delete a;
 	for (int i = 0; i < num_animals; ++i)
 		delete animals[i];
 	return (0);

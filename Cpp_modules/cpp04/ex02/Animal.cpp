@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:42:14 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/26 15:43:13 by Kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 15:01:57 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 
-Animal::Animal() : _type("Default"), _brain(new Brain)
+Animal::Animal() : _type("Default")
 {
 	std::cout << "Default constructor called: " << _type << std::endl;
 }
 
-Animal::Animal(const std::string &type) : _type(type),  _brain(new Brain)
+Animal::Animal(const std::string &type) : _type(type)
 {
-	std::cout << "constructor called: "<< _type << std::endl;
+	std::cout << "constructer called: "<< _type << std::endl;
+}
+
+Animal::Animal(const Animal &other) : _type(other._type)
+{
+	std::cout << "copy constructor called: " << _type << std::endl;
 }
 
 Animal::~Animal()
 {
-	delete _brain;
 	std::cout << "deconstructor called " << _type << std::endl;
 }
 
@@ -34,8 +36,7 @@ Animal &Animal::operator=(const Animal &other)
 {
 	if (this != &other)
 	{
-		this->_type = other._type;
-		_brain = other._brain;
+		_type = other._type;
 	}
 	return (*this);
 }
@@ -53,9 +54,4 @@ void	Animal::setType(const std::string &type)
 void	Animal::makeSound() const
 {
 	std::cout << "Some generic sound" << std::endl;
-}
-
-void	Animal::printBrainAddress()
-{
-	std::cout << &this->_brain << std::endl;
 }

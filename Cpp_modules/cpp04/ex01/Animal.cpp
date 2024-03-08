@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:42:14 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/06 13:11:13 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 13:51:06 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ Animal::Animal() : _type("Default")
 Animal::Animal(const std::string &type) : _type(type)
 {
 	std::cout << "constructer called: "<< _type << std::endl;
+}
+
+Animal::Animal(const Animal &other) : _type(other._type)
+{
+	std::cout << "copy constructor called: " << _type << std::endl;
 }
 
 Animal::~Animal()

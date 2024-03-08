@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 15:47:49 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/06 12:52:26 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 13:50:30 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 			Brain	*_brain;
 		public:
 					Cat();
+					Cat(const Cat &other);
 					~Cat();
 			Cat		&operator=(const Animal &other);
 			void	makeSound() const;

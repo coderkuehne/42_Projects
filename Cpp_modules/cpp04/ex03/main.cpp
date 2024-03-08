@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kekuhne <kekuhne@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:21:57 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/02/27 16:45:35 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/06 14:04:58 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main()
 	IMateriaSource *src = new MateriaSource();
 
 	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	std::cout << "\033[1;31mShould fail. 4/4 learned\033[0m\n";
 	src->learnMateria(new Cure());
 
 

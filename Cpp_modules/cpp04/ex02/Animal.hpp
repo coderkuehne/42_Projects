@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:35:52 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/03 16:12:26 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/08 15:01:06 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,17 @@
 class Animal
 {
 	protected:
-		std::string	_type;
-		Brain		*_brain;
 					Animal();
 					Animal(const std::string &type);
+					Animal(const Animal &other);
+		std::string	_type;
 	public:
-		virtual			~Animal();
-		Animal			&operator=(const Animal &other);
-		virtual void	makeSound() const;
+		virtual			~Animal() = 0;
+		virtual Animal	&operator=(const Animal &other) = 0;
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 		void			setType(const std::string &type);
-		void			printBrainAddress();
+		virtual void 	printBrainAddress() = 0;
 		virtual Animal	*clone() const = 0;
 };
-
 #endif
