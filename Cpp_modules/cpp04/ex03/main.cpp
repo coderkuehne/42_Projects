@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:21:57 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/06 14:04:58 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/10 20:53:56 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main()
 
 
 	ICharacter *me = new Character("me");
+	ICharacter *world = new Character("world");
 	AMateria *tmp;
 
 	std::cout<< "\n\n";
@@ -48,6 +49,7 @@ int main()
 	std::cout << "\033[1;31mShould`nt equip cause slots are full\033[0m\n";
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	world->equip(tmp);
 	std::cout<< "\n\n";
 
 	std::cout << "\033[1;31mUnequiping non existent Slot should fail \033[0m\n";
@@ -64,10 +66,12 @@ int main()
 	me->use(3, *bob);
 	std::cout<< "\n";
 	std::cout << "\033[1;31mShould fail cause not equiped\033[0m\n";
+	world->equip(me->getInventory(3));
 	me->unequip(3);
 	me->use(3, *bob);
 	me->use(4, *bob);
 	std::cout<< "\n";
+	delete world;
 	delete bob;
 	delete me;
 	delete src;

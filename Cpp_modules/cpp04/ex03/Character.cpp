@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:50:44 by Kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/06 13:58:07 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/10 20:52:52 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ Character::Character() : _name("Default")
 {
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
-	for (int i = 0; i < MAX_FLOOR_SIZE; ++i)
-		_floor[i] = NULL;
-	_onfloor = 0;
 	std::cout << "Default Character constructed : " << std::endl;
 }
 
@@ -28,9 +25,6 @@ Character::Character(std::string const &name) : _name(name)
 {
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
-	for (int i = 0; i < MAX_FLOOR_SIZE; ++i)
-		_floor[i] = NULL;
-	_onfloor = 0;
 	std::cout << "Character constructed : " << _name << std::endl;
 }
 
@@ -38,8 +32,6 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; ++i)
 		delete _inventory[i];
-	for (int i = 0; i < _onfloor; ++i)
-		delete _floor[i];
 }
 
 Character	&Character::operator=(const Character &other)
@@ -69,6 +61,14 @@ void	Character::setName(const std::string &name)
 	_name = name;
 }
 
+AMateria	*Character::getInventory(int idx) const
+{
+	if (idx >= 0 && idx < 4)
+		return (_inventory[idx]);
+	else
+		return (NULL);
+}
+
 void	Character::equip(AMateria *m)
 {
 	if (!m)
@@ -78,21 +78,19 @@ void	Character::equip(AMateria *m)
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			std::cout << i <<"/4 Materia Slots in use: Materia equiped" << std::endl;
+			std::cout<< m->getType()<< ": " << i + 1 <<"/4 Materia Slots in use: Materia equiped" << std::endl;
 			return ;
 		}
 	}
-	std::cout << "Slots Full putting on Floor" << std::endl;
-	_floor[_onfloor++] = m;
+	std::cout << m->getType() << ": "<< "Slots Full putting on Floor" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
 	{
-		_floor[_onfloor++] = _inventory[idx];
+		std::cout << _inventory[idx]->getType() << ": " << idx << " is now an empty slot" << std::endl;
 		_inventory[idx] = NULL;
-		std::cout << idx << " is now an empty slot" << std::endl;
 	}
 	else
 		std::cout << idx << " invalid slot" << std::endl;
