@@ -14,11 +14,13 @@
 # define SCALARCONVERTER_HPP
 # include <string>
 # include <iostream>
+# include <cstdlib>
 # include <cfloat>
+# include <climits>
 
 class ScalarConverter
-{
-	static std::string convert(std::string &literal);
+{	public:
+	  static void convert(std::string &literal);
 };
 
 #endif

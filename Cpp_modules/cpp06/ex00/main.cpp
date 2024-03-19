@@ -17,6 +17,9 @@ int main (int argc, char **argv)
 	if (argc < 2 || argc > 2)
 		std::cout << "Error : Argument Count" << std::endl;
 	else
-		ScalarConverter::convert(argv[1]);
+	{
+		std::string argument(argv[1]);
+		ScalarConverter::convert(argument);
+	}
 	return (0);
 }
