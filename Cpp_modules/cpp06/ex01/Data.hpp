@@ -6,14 +6,14 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:52:02 by kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/24 15:05:10 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/24 15:31:07 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_HPP
 # define DATA_HPP
-#include <iostream>
-#include "Serializer.hpp"
+# include <iostream>
+# include "Serializer.hpp"
 
 class Data
 {

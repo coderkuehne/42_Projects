@@ -13,9 +13,8 @@ int main()
         std::cout << "Serialization and deserialization successful." << std::endl;
         std::cout << "Original value: " << data.getValue() << std::endl;
         std::cout << "Deserialized value: " << deserializedPtr->getValue() << std::endl;
-    } 
+    }
 	else
         std::cout << "Serialization and deserialization failed." << std::endl;
     return (0);
 }
-
