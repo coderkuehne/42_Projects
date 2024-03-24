@@ -1,12 +1,21 @@
-#include "serializer.hpp"
+#include <iostream>
+#include <cstdint>
+#include "Data.hpp"
+#include "Serializer.hpp"
 
 int main()
 {
-  int *nbr = 42;
-  Data *ptr;
-
-  ptr->raw = (void *)nbr;
-  ptr.ptr = serializer(ptr);
-  ptr->raw = deserializer(ptr.ptr);
-  std::cout << reinterpret_cast<int>(*ptr) << std::endl;
+    Data data(42);
+    uintptr_t serializedPtr = Serializer::serialize(&data);
+    Data* deserializedPtr = Serializer::deserialize(serializedPtr);
+    if (deserializedPtr == &data)
+	{
+        std::cout << "Serialization and deserialization successful." << std::endl;
+        std::cout << "Original value: " << data.getValue() << std::endl;
+        std::cout << "Deserialized value: " << deserializedPtr->getValue() << std::endl;
+    } 
+	else
+        std::cout << "Serialization and deserialization failed." << std::endl;
+    return (0);
 }
+
