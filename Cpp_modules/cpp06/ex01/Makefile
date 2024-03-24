@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Kekuhne <kekuehne@student.42wolfsburg.d    +#+  +:+       +#+         #
+#    By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/11 15:43:34 by Kekuhne           #+#    #+#              #
-#    Updated: 2024/02/18 18:50:22 by Kekuhne          ###   ########.fr        #
+#    Created: 2024/03/08 16:22:00 by kekuhne           #+#    #+#              #
+#    Updated: 2024/03/16 15:55:16 by kekuhne          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= fixed
+NAME = main
 
 SRC	=	$(wildcard *.cpp)
 OBJ	=	$(SRC:.cpp=.o)
@@ -32,6 +32,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf *_shrubbery
 
 re: fclean all
 

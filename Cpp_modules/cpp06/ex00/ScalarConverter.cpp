@@ -63,18 +63,33 @@ static void print_Int(std::string literal)
 static void print_Float(std::string literal)
 {
   float value = atof(literal.c_str());
-	if (literal == "")
+	if (literal == "" || literal == "nan")
 		std::cout << "Float: nanf" << std::endl;
+  else if (literal == "-inf" || literal == "+inf" || literal == "inf")
+      std::cout << "Float: " << literal << std::endl;
 	else
-    std::cout << "Float: " << value << "f" << std::endl;
+  {
+    std::ostringstream oss;
+    oss << std::fixed << value;
+    std::string _value = oss.str();
+    std::cout << "Float: " << _value << "f" << std::endl;
+  }
 }
 
 static void print_Double(std::string literal)
 {
-	if (literal == "")
+  double value = strtod(literal.c_str(), NULL);
+	if (literal == "" || literal == "nan")
 		std::cout << "Double : nan" << std::endl;
+	else if (literal == "-inf" || literal == "+inf" || literal == "inf")
+      std::cout << "Double: " << literal << std::endl;
 	else
-		std::cout << "Double: " << strtod(literal.c_str(), NULL) << std::endl;
+  {
+    std::ostringstream oss;
+    oss << std::fixed << value;
+    std::string _value = oss.str();
+    std::cout << "Double: " << _value << std::endl;
+  }
 }
 
 std::string parse(std::string &literal, int i)
@@ -97,14 +112,18 @@ std::string parse(std::string &literal, int i)
 	}
 	if (i == TYPE_FLOAT)
 	{
-		float value = atof(literal.c_str());
-		if (value < FTL_MAX || value > -FTL_MAX || !strIsNum(literal))
+   	 if (literal == "nan" || literal == "+inf" || literal == "-inf" || literal == "inf")
+      return (literal);
+	  float value = atof(literal.c_str());
+		if (value > FLT_MAX || value < -FLT_MAX || !strIsNum(literal))
 			return ("");
 	}
 	if (i == TYPE_DOUBLE)
 	{
-		
-		if (value < DBL_MAX || value > -DBL_MAX || !strIsNum(literal))
+     if (literal == "nan" || literal == "+inf" || literal == "-inf" || literal == "inf")
+      return (literal);
+	  double value = strtod(literal.c_str(), NULL);	
+		if (value > DBL_MAX || value < -DBL_MAX || !strIsNum(literal))
 			return ("");
 	}
 	return (literal);

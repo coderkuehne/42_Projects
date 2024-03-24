@@ -14,6 +14,7 @@
 # define SCALARCONVERTER_HPP
 # include <string>
 # include <iostream>
+# include <sstream>
 # include <cstdlib>
 # include <cfloat>
 # include <climits>
