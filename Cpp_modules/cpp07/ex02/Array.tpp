@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 10:42:17 by kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/27 10:42:20 by kekuhne          ###   ########.fr       */
+/*   Created: 2024/03/27 11:30:22 by kekuhne           #+#    #+#             */
+/*   Updated: 2024/03/27 11:33:30 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include "Array.hpp"
 
-template<typename T>
-void printElement(const T& element)
+template <typename T>
+Array<T>::Array() : _array(NULL), _size(0)
 {
-  std::cout << element << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
-
-template<typename T>
-void iter(T* array, int lenght, void (*func)(const T&))
-{
-  for (int i = 0; i < lenght; ++i)
-      func(array[i]);
-}
-
-#endif // !ITER_HPP
