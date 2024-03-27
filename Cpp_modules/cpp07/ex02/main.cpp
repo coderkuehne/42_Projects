@@ -18,10 +18,10 @@ int main()
 
 	for (unsigned int i = 0; i < a.size(); ++i)
 		a[i] = i;
-	Array<int>b(10);
+	Array<float>b(10);
 
 	for (unsigned int i = 0; i < b.size(); ++i)
-		b[i] = i;
+		b[i] = 42.42f;
 
 	Array<std::string>c(5);
 
