@@ -6,7 +6,7 @@
 /*   By: kekuhne <kekuhne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:42:13 by kekuhne           #+#    #+#             */
-/*   Updated: 2024/03/27 13:35:26 by kekuhne          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:08:37 by kekuhne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ class Array
 			std::cout << "Assignation operator called" << std::endl;
 			if (this != &src)
 			{
-				delete[] _array;
+				if (_array)
+					delete[] _array;
 				_size = src._size;
 				_array = new T[_size];
 				for (unsigned int i = 0; i < _size; i++)
