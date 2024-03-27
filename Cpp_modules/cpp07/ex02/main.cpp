@@ -21,7 +21,7 @@ int main()
 	Array<float>b(10);
 
 	for (unsigned int i = 0; i < b.size(); ++i)
-		b[i] = 42.42f;
+		b[i] = 42.42f + i;
 
 	Array<std::string>c(5);
 
